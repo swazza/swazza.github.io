@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }}</title>
+  <title>{{ page.title }}</title>
   <link rel="stylesheet" href="http://nomorecharitablestatus.com/css/normalize.css">
   <link rel="stylesheet" href="http://nomorecharitablestatus.com/css/solo.css">
   <link rel="stylesheet" href="/css/styles.css">
@@ -12,13 +12,18 @@
 <body>
 
   <article>
-   <div class="container">
-    <h3>{{ page.title }}</h3>
+    <div class="container">
+      <h3>{{ page.title }}</h3>
 
-    {{ content }}
-     </div>
-   </article>
+      {{ content }}
 
-  {% include disqus.html %}  
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="swazza85" data-size="large">Tweet</a>
+      <a href="https://twitter.com/swazza85" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @swazza85</a>
+      <div id="disqus_thread"></div>
+    </div>
+  </article>
+
+  {% include disqus.html %}
+  {% include twitter.html %}
 </body>
 </html>
