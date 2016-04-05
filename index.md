@@ -2,53 +2,41 @@
 layout: default
 ---
 
-## A Jekyll template for publishing single-page websites and articles that are incredibly readable and fully responsive
+## My musings on software design
 
-### Nice, clean, reading!
+### Embracing event driven asynchronous architecture - first steps towards micro services
 
-Good clean read is set up with readability first in mind. Whatever you want to communicate here can be read easily, and without distraction. Of course, it's fully responsive, which means people can read it naturally on any phone, or tablet. Write it in markdown in <code>index.md</code> and get a beautifully published piece.
+As you prepare to “platformize” your product and eventually open it up to large volumes of traffic generated from both inside and outside your organization, it is important to break your product down into cohesive, yet loosely coupled components that use event driven asynchronous architectures to communicate with each other. The monolithic architecture has served you well so far. But to achieve the next level of agility and scale, both in terms of delivery, technology and business, you need to split up our application into smaller services. [Read more...](/posts/embracing-event-driven-asynchronous-architecture-first-steps-to-microservices)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### UI as a state machine
 
-> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+User Interfaces are all about state. Each change in UI is effectively a state transition. Thinking of UI in these terms helps us model the interactions between components as state transitions. An event occurs that changes the state of a component - there is a cause and there is an effect. Ask any UI engineer and they'll tell you that the chunk of complexity resides in component interactions, not in the components themselves. Looking at UIs from this perspective will help us appreciate why React has become so popular and how frameworks like redux and cyclejs aim to tackle this sort of complexity. [Read more...](/posts/ui-as-state-machine)
 
-### With footnotes too!
+### The importance of replicable environments
 
-Back up your stuff with solid, clean citations. Footnotes can be written in markdown and appear like this.[^1] Use as many as you like.[^2]
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-### Add social sharing buttons
+### The product triangle - engineering, product, delivery
 
-Simply add the following line anywhere in you markdown:
+Engineering - the actual code  
+Product - your user stories  
+Delivery - how often you ship  
+Three sides of an equilateral triangle, focus on one and ignore the other - your product will take a hit. How do you effectively manage this triangle? What are the tradeoffs that you make in a project? [Read more...](/posts/the-product-triangle-engineering-product-delivery)
 
-<pre><code>{% raw  %}
-{% include sharing.html %}
-{% endraw %}
-</code></pre>
+### Migrating a monolithic application to a microservices architecture - things to consider
+So you have decided that your application needs to be migrated to a microservices architecture. Now you need to decide where to begin, what are the things that I need to consider upfront? My current organization's customer is at a similar stage with their product. I have been working on the product for about an year now and I reckon these are some of the issues that need to be addressed before starting the journey.
 
-and get a nice responsive sharing ribbon.
+* How do I go about breaking up the monolith into loosely coupled services?
+* What is the best way for these services to interact with each other?
+* What about security?  
+* What about the development processes?
+* How do I troubleshoot if something goes wrong?
+* [Read more...](/posts/migrating-monolith-to-microservices)
 
-{% include sharing.html %}
+### Business logic as state mutation
+The intention of writing this post was to let out my frustration and rant about it online. About having to deal with code that makes me want to rage quit. But then I figured that would help no one. Figured I'd write a decent post and try to explain to the customer what exactly the problem with their code was and hopefully get them to agree for a refactoring. [Read more...](/posts/business-logic-as-state-mutation)
 
-Add this at the bottom, or the top, or between every other paragraph is you're desprate for social validation.
-
-Just remember to customize the buttons to fit your url in the <code>_includes/sharing.html</code> file. These buttons are made available and customizable by the good folks at kni-labs. See the documentation at [https://github.com/kni-labs/rrssb](https://github.com/kni-labs/rrssb) for more information.
-
-### Add images to make your point
-
-Images play nicely with this as well. Add diagrams or charts to make your point, and the template will fit them in appropriately.
-
-<img src="http://githube.com/adueck/good-clean-read/images/hello.svg" alt="hello">
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Thanks to [Shu Uesengi](https://github.com/chibicode) for inspiring and providing the base for this template with his excellent work, [solo](https://github.com/chibicode).
-
-<hr>
-
-##### Footnotes:
-
-[^1]: This is a footnote. Click to return.
-
-[^2]: Here is another.
+* Event Sourcing - beginning a CQRS journey
+* What does it take to be agile? Stuff they don't tell you in books and blogs.
+* An opinionated view on how to build angular SPAs
+* What's all the fuss around "reactive"?

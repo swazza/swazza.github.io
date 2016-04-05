@@ -1,0 +1,40 @@
+{
+    "name": "good-clean-read",
+    "version": "1.0.0",
+    "description": "This is as Jekyll theme built to make single page websites, articles, or literary masterpieces readable anywhere.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swazza/swazza.github.io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/swazza/swazza.github.io/issues"
+    },
+    "homepage": "https://github.com/swazza/swazza.github.io#readme",
+    "devDependencies": {
+        "css-loader": "^0.23.1",
+        "extract-text-webpack-plugin": "^0.9.1",
+        "file-loader": "^0.8.5",
+        "gulp": "^3.9.0",
+        "gulp-copy": "0.0.2",
+        "gulp-inject": "^3.0.0",
+        "gulp-util": "^3.0.7",
+        "html-loader": "^0.4.0",
+        "jasmine": "^2.4.1",
+        "node-sass": "^3.4.2",
+        "run-sequence": "^1.1.5",
+        "sass-loader": "^3.1.2",
+        "style-loader": "^0.13.0",
+        "url-loader": "^0.5.7",
+        "webpack": "^1.12.9",
+        "webpack-dev-server": "^1.14.0"
+    },
+    "dependencies": {
+        "snapsvg": "^0.4.0"
+    }
+}
