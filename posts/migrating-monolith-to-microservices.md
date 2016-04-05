@@ -51,3 +51,38 @@ Stairway to the RESTful purist's heaven :)
 Enough self indulgence. Back to the topic now. Luckily for us, the folks from whom we inherited the application, did a decent job of organizing their domain models cohesively. So all the entities related to one aggregate were clubbed together in a single module. The definition of the aggregates was clear but the boundaries between them wasn't explicit. What do I mean by that? If you take a look at the class diagram above, you will notice that the 'Survey' AGGREGATE ROOT has a direct reference to 'Project' and 'Customer' ENTITIES which can  - and in this case are - entire AGGREGATE ROOTS on their own. So there is no explicit boundary between these AGGREGATE ROOTS. If the boundary was explicit, then instead of having a reference to the 'Customer' and 'Project' AGGREGATE ROOTS themselves, the 'Survey' AGGREGATE ROOT would have two extra fields - 'CustomerId' and 'ProjectId' - treating them as ENTITIES from a separate system.
 
 Alright, so hopefully the above paragraph did a decent job in explaining what an explicit aggregate boundary is. But why do we need one you ask? Well, not having explicit boundaries means that your code is assuming that the other AGGREGATE ROOTS come from the same system containing it. That may not always be true. Especially in a microservices architecture if you want to take advantage of polyglot persistance. Maybe I feel that one of my aggregate roots is best stored in a document db like MongoDB or RavenDB. But I'd still want to store my Customer information in a relational database. Decoupling your data by breaking down your domain models along aggregate boundaries is a great way to ensure that your data isn't tightly coupled at the storage layer. This allows us to scale the application, both in terms of load and functionality, without different modules stepping on each others toes.
+
+Having explicit aggregate boundaries also enables us to introduce [HATEOS](https://en.wikipedia.org/wiki/HATEOAS) into our RESTful resources. So instead of our Survey resource looking like -
+
+~~~
+{
+  Name: "...",
+  FriendlyId: "...",
+  Questions: [],
+  Answers: [],
+  Rules: [],
+  Customer: {},
+  Project: {}  
+}
+~~~
+
+we can make it look something like this -
+
+~~~
+{
+  Name: "...",
+  FriendlyId: "...",
+  Questions: [],
+  Answers: [],
+  Rules: [],
+  Links: [
+      { "rel": "self", "href": "/surveys/friendlyId" }
+      { "rel": "customer", "href": "/customers/customerId" },
+      { "rel": "project", "href": "/projects/projectId" }
+  ]
+}
+~~~
+
+Which (if you are willing to ignore that JSON is not a hypermedia format) allows us to embrace HATEOS in our RESTful design. Check out the 'Richardson Maturity Model' for more info on this.
+
+I think this is enough precursor to get us started with splitting our domain models. Up next, we will be covering how to split up your data at the storage level.
