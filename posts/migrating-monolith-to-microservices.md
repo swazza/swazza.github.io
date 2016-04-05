@@ -86,3 +86,22 @@ we can make it look something like this -
 Which (if you are willing to ignore that JSON is not a hypermedia format) allows us to embrace HATEOS in our RESTful design. Check out the 'Richardson Maturity Model' for more info on this.
 
 I think this is enough precursor to get us started with splitting our domain models. Up next, we will be covering how to split up your data at the storage level.
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = 'blogswazzaio';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "{{ page.url }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//blogswazzaio.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>

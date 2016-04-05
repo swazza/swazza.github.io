@@ -12,9 +12,9 @@ As you prepare to “platformize” your product and eventually open it up to la
 
 User Interfaces are all about state. Each change in UI is effectively a state transition. Thinking of UI in these terms helps us model the interactions between components as state transitions. An event occurs that changes the state of a component - there is a cause and there is an effect. Ask any UI engineer and they'll tell you that the chunk of complexity resides in component interactions, not in the components themselves. Looking at UIs from this perspective will help us appreciate why React has become so popular and how frameworks like redux and cyclejs aim to tackle this sort of complexity. [Read more...](/posts/ui-as-state-machine)
 
-### The importance of replicable environments
+### The importance of replicable environments - IaaC and IaaS
 
-
+[Read more...](/posts/replicable-environments)
 
 ### The product triangle - engineering, product, delivery
 
